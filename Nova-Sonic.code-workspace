@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../aws-nova-sonic-mcp"
+		}
+	],
+	"settings": {}
+}

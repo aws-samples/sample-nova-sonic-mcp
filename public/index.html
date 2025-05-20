@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Audio Streaming to Bedrock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="status" class="disconnected">Disconnected</div>
+
+        <!-- 配置按钮 -->
+        <div id="config-button">
+            <i class="material-icons">settings</i>
+        </div>
+
+        <!-- 用户头部 -->
+        <div id="user-header">
+            <div id="user-box">
+                <div id="user-icon">
+                    <i class="material-icons" style="font-size: 16px; color: #ffffff;">person</i>
+                </div>
+                <span class="user-name">
+                    <span id="current-voice">Tiffany</span>
+                </span>
+                <i class="material-icons" style="color: #ffffff;">arrow_drop_down</i>
+                <!-- 下拉菜单放在user-box里面，确保它是user-box的子元素 -->
+                <div id="voice-dropdown" class="dropdown-content">
+                    <div class="voice-option selected" data-voice="tiffany">
+                        <i class="material-icons voice-icon">female</i>
+                        <span class="voice-name">Tiffany</span>
+                    </div>
+                    <div class="voice-option" data-voice="matthew">
+                        <i class="material-icons voice-icon">male</i>
+                        <span class="voice-name">Matthew</span>
+                    </div>
+                    <div class="voice-option" data-voice="amy">
+                        <i class="material-icons voice-icon">female</i>
+                        <span class="voice-name">Amy</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 语音响应球 -->
+        <div id="orb-container">
+            <div id="pulsating-orb">
+                <div class="inner-glow"></div>
+                <div class="voice-waves"></div>
+                <div class="voice-particles"></div>
+            </div>
+        </div>
+
+        <!-- 聊天容器 -->
+        <div id="chat-container"></div>
+
+        <!-- 控制按钮 -->
+        <div id="controls">
+            <div id="status-text"></div>
+            <div id="buttons-container">
+                <button id="start" class="control-button">
+                    <i class="material-icons">mic</i>
+                </button>
+                <button id="stop" class="control-button" disabled style="background-color: #ff3b30;">
+                    <i class="material-icons">call_end</i>
+                </button>
+                <button id="text" class="control-button">
+                    <i class="material-icons">text_fields</i>
+                </button>
+            </div>
+        </div>
+        <!-- 配置弹窗 -->
+        <div id="config-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>配置</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-tabs">
+                    <div class="tab active" data-tab="prompt">提示词</div>
+                    <div class="tab" data-tab="language">语言</div>
+                    <div class="tab" data-tab="mcp-servers">MCP服务器</div>
+                </div>
+                <div class="modal-body">
+                    <!-- 提示词标签页内容 -->
+                    <div class="tab-content active" id="prompt-tab">
+                        <div class="form-group">
+                            <label for="prompt-select">选择提示词:</label>
+                            <select id="prompt-select">
+                                <option value="default">默认</option>
+                                <option value="pauses">有停顿的对话</option>
+                                <option value="tutor">辅导员模式</option>
+                                <option value="hotel_cancel">酒店取消</option>
+                                <option value="hotel_cancel_new">酒店取消(新)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prompt-editor">自定义提示词:</label>
+                            <textarea id="prompt-editor" rows="8"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 语言选择标签页内容 -->
+                    <div class="tab-content" id="language-tab">
+                        <div class="form-group">
+                            <label for="language-select">选择语言:</label>
+                            <select id="language-select">
+                                <option value="zh">中文</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- MCP服务器标签页内容 -->
+                    <div class="tab-content" id="mcp-servers-tab">
+                        <div id="mcp-servers-container">
+                            <p>加载中...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="save-config" class="button">保存</button>
+                    <button id="cancel-config" class="button">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

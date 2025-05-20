@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "github.com/executeautomation/mcp-playwright": {
+      "disabled": false,
+      "command": "npx",
+      "args": ["-y", "@executeautomation/playwright-mcp-server"]
+    },
+    "github.com/modelcontextprotocol/servers/tree/main/src/filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/tangqy/Documents/MCP/filesystem-server"
+      ],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "searchWebsit_McpHttpServer":{
+      "transportType":"streamable_http",
+      "command":"restful",
+      "baseUrl":"http://ec2-35-93-77-218.us-west-2.compute.amazonaws.com:8080/message",
+      "headers": {
+      }
+    }
+  }
+}
