@@ -1,4 +1,4 @@
-# Building Agents with Amazon Nova Sonic and MCP
+Amazon Nova Sonic and MCP
 
 This project implements a WebSocket-based bidirectional audio streaming application integrated with Amazon Nova Sonic model for real-time speech-to-speech conversations. The application enables natural conversational interactions through a modern web interface while leveraging Amazon's powerful Nova Sonic model for processing and generating responses.
 
