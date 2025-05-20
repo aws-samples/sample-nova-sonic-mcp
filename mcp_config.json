@@ -14,6 +14,14 @@
       ],
       "disabled": false,
       "autoApprove": []
+    },
+    "searchWebsit_McpHttpServer":{
+      "transportType":"streamable_http",
+      "command":"restful",
+      "baseUrl":"https://7xkm2qt4e8.execute-api.us-west-2.amazonaws.com/Prod/mcp",
+      "headers": {
+      },
+      "token":"*****"
     }
   }
 }
