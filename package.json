@@ -25,8 +25,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aws-sdk/client-bedrock-runtime": "^3.787.0",
-    "@aws-sdk/credential-providers": "^3.787.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.1004.0",
+    "@aws-sdk/credential-providers": "^3.1004.0",
     "@modelcontextprotocol/sdk": "^1.10.2",
     "@smithy/node-http-handler": "^4.0.4",
     "@smithy/types": "^4.2.0",
